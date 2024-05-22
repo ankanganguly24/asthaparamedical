@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../Assets/logo.jpg">
+    <title>Facilities</title>
+    <link rel="stylesheet" href='../src/output.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css"
+        integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+</head>
+
+<body>
+    <div class="bg-gradient-to-l from-rose-700 to-indigo-600 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+        <div class="container mx-auto px-4">
+            <!-- Navigation Bar -->
+            <nav class="flex justify-between items-center py-4">
+                <!-- Logo and Institute Name -->
+                <div class="flex items-center gap-x-5">
+                    <a href="/index.html"> <img src="../Assets/logo.jpg" alt="Logo" width="50" class="rounded-full"></a>
+                   
+                    <div class="text-white">
+                        <h3 class="font-poppins md:text-lg hidden md:block" id="logo">Astha Paramedical & Hospitality
+                            Institute
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Hamburger Menu for Mobile -->
+                <div class="lg:hidden">
+                    <button id="toggle-sidebar" class="text-white focus:outline-none">
+                        <!-- Hamburger icon -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-16 6h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex gap-x-8 text-white">
+                    <ul class="flex gap-x-8 text-lg font-inter" id="nav-items">
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="/courses/courses.html">Courses</a></li>
+                        <li><a href="./facilities.html">Facilities</a></li>
+                        <li><a href="/contactus/gallery.html">Gallery</a></li>
+                        <li><a href="./contactus.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Enquire Button -->
+                <!-- <div class="hidden lg:flex justify-center items-center">
+                    <button
+                        class="bg-gradient-to-r from-rose-700 to-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-gradient-to-l hover:from-indigo-600 hover:to-rose-700 hover:text-rose-200"
+                        id="btn-nav">
+                        Enquire Now
+                    </button>
+                </div> -->
+            </nav>
+        </div>
+
+        <!-- Mobile Sidebar -->
+        <div id="sidebar"
+            class="fixed inset-y-0 left-0 w-3/4 bg-gradient-to-l from-rose-700 to-indigo-600 text-white z-50 transition-transform duration-300 transform -translate-x-full">
+            <button id="close-sidebar" class="absolute top-4 right-4">
+                <!-- Close icon -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+            <ul class="flex flex-col items-start gap-y-4 p-4 text-lg font-inter">
+                <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="/courses/courses.html">Courses</a></li>
+                        <li><a href="./facilities.html">Facilities</a></li>
+                        <li><a href="/contactus/gallery.html">Gallery</a></li>
+                        <li><a href="./contactus.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bg-gray-200">
+
+
+
+        <div id="features" class="mx-auto  px-2 py-10 max-w-6xl">
+            <p class="text-center text-base font-semibold leading-7 text-primary-500">Our Facilities</p>
+            <h2 class="text-center font-display text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+                Find Facilities like never before
+            </h2>
+            <ul class="mt-16 grid grid-cols-1 gap-6 text-center text-slate-700 md:grid-cols-3">
+                <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+
+                    <img src="https://www.svgrepo.com/show/530438/ddos-protection.svg" alt="" class="mx-auto h-10 w-10">
+                    <h3 class="my-3 font-display font-medium">Powered by ChatGPT</h3>
+                    <p class="mt-1.5 text-sm leading-6 text-secondary-500">
+                        the cutting-edge language model that makes interactions a breeze. With its user-friendly
+                        interface,
+                        effortlessly tap into the world of AI-generated text.
+                    </p>
+
+                </li>
+                <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+
+                    <img src="https://www.svgrepo.com/show/530442/port-detection.svg" alt="" class="mx-auto h-10 w-10">
+                    <h3 class="my-3 font-display font-medium">Easy to use</h3>
+                    <p class="mt-1.5 text-sm leading-6 text-secondary-500">
+                        Simply input your subject, click the generate button, and the result will appear in seconds just
+                        like
+                        magick.
+                    </p>
+
+                </li>
+                <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+                    <img src="https://www.svgrepo.com/show/530444/availability.svg" alt="" class="mx-auto h-10 w-10">
+                    <h3 class="my-3 font-display font-medium">Custom settings</h3>
+                    <p class="mt-1.5 text-sm leading-6 text-secondary-500">
+                        We offer advanced customization. You can freely combine options like roles, languages, publish,
+                        tones,
+                        lengths,
+                        and formats.
+                    </p>
+
+                </li>
+                <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+                    <a href="/pricing" class="group">
+                        <img src="https://www.svgrepo.com/show/530440/machine-vision.svg" alt=""
+                            class="mx-auto h-10 w-10">
+                        <h3 class="my-3 font-display font-medium group-hover:text-primary-500">Free trial</h3>
+                        <p class="mt-1.5 text-sm leading-6 text-secondary-500">We offer a free trial service without
+                            login. We
+                            provide
+                            many payment options including pay-as-you-go and subscription.</p>
+                    </a>
+                </li>
+                <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+                    <a href="/templates" class="group">
+                        <img src="https://www.svgrepo.com/show/530450/page-analysis.svg" alt=""
+                            class="mx-auto h-10 w-10">
+                        <h3 class="my-3 font-display font-medium group-hover:text-primary-500">
+                            90+ templates
+                        </h3>
+                        <p class="mt-1.5 text-sm leading-6 text-secondary-500">We offer many templates covering areas
+                            such as
+                            writing,
+                            education, lifestyle and creativity to inspire your potential. </p>
+                    </a>
+                </li>
+                <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+                    <a href="/download" class="group">
+                        <img src="https://www.svgrepo.com/show/530453/mail-reception.svg" alt=""
+                            class="mx-auto h-10 w-10">
+                        <h3 class="my-3 font-display font-medium group-hover:text-primary-500">Use Anywhere</h3>
+                        <p class="mt-1.5 text-sm leading-6 text-secondary-500">Our product is compatible with multiple
+                            platforms
+                            including Web, Chrome, Windows and Mac, you can use MagickPen anywhere.</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        <footer class="bg-gradient-to-l from-rose-700 to-indigo-600 shadow-md">
+            <div class="mx-auto max-w-screen-xl p-4 py-6 lg:py-8">
+                <div class="md:flex md:justify-between flex-wrap">
+                    <div class="mb-6 md:mb-0 w-full md:w-auto">
+                        <a href="/index.html" class="flex items-center">
+                            <img src="../Assets/logo.jpg" class="h-12 me-3 rounded-lg" alt="Logo" />
+                            <span class="hidden md:block text-2xl font-semibold whitespace-nowrap text-white">ASTHA PARAMEDICAL &amp; HOSPITALITY INSTITUTE</span>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 w-full md:w-auto">
+                        <div class="mb-6 md:mb-0">
+                            <h2 class="mb-3 text-sm font-semibold text-white uppercase">Resources</h2>
+                            <ul class="text-gray-200">
+                                <li><a href="/contactus/aboutus.html" class="hover:underline">About Us</a></li>
+                                <li><a href="/courses/courses.html" class="hover:underline">Courses</a></li>
+                            </ul>
+                        </div>
+                        <div class="mb-6 md:mb-0">
+                            <h2 class="mb-3 text-sm font-semibold text-white uppercase">Follow us</h2>
+                            <ul class="text-gray-200">
+                                <li><a href="https://www.instagram.com/aphi_siliguri?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="hover:underline">Instagram</a></li>
+                                <li><a href="https://www.facebook.com/ASTHAVTC/" class="hover:underline">Facebook</a></li>
+                            </ul>
+                        </div>
+                        <div class="mb-6 md:mb-0">
+                            <h2 class="mb-3 text-sm font-semibold text-white uppercase">Legal</h2>
+                            <ul class="text-gray-200">
+                                <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                                <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-6 border-gray-200 md:hidden text-white" />
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <span class="text-sm text-white">© 2024 <a href="index.html" class="hover:underline">APHI™</a>. All Rights Reserved.</span>
+                    <div class="flex mt-4 md:mt-0">
+                        <a href="https://www.facebook.com/ASTHAVTC/" class="text-gray-200 hover:text-white">
+                            <img src="../Assets/facebook.png" alt="Facebook" width="24" class="me-3" />
+                            <span class="sr-only">Facebook page</span>
+                        </a>
+                        <a href="https://youtube.com/@aphi_siliguri?si=CifbAMYG6mfhqZMr" class="text-gray-200 hover:text-white">
+                            <img src="/Assets/youtube.png" alt="YouTube" width="24" class="me-3" />
+                            <span class="sr-only">YouTube</span>
+                        </a>
+                        <a href="https://www.instagram.com/aphi_siliguri?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-gray-200 hover:text-white">
+                            <img src="/Assets/instagram.png" alt="Instagram" width="24" />
+                            <span class="sr-only">Instagram account</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('toggle-sidebar').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('-translate-x-full');
+        });
+
+        document.getElementById('close-sidebar').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.add('-translate-x-full');
+        });
+    </script>     
+</body>
+
+</html>

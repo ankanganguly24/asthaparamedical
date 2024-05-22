@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../Assets/logo.jpg">
+    <title>Courses</title>
+    <link rel="stylesheet" href='../src/output.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css"
+        integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"  rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+</head>
+<body>
+    <div class="bg-gradient-to-l from-rose-700 to-indigo-600 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+        <div class="container mx-auto px-4">
+            <!-- Navigation Bar -->
+            <nav class="flex justify-between items-center py-4">
+                <!-- Logo and Institute Name -->
+                <div class="flex items-center gap-x-5">
+                    <a href="/index.html"> <img src="../Assets/logo.jpg" alt="Logo" width="50" class="rounded-full"></a>
+                    <div class="text-white">
+                        <h3 class="font-poppins md:text-lg hidden md:block" id="logo">Astha Paramedical & Hospitality
+                            Institute
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Hamburger Menu for Mobile -->
+                <div class="lg:hidden">
+                    <button id="toggle-sidebar" class="text-white focus:outline-none">
+                        <!-- Hamburger icon -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-16 6h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex gap-x-8 text-white">
+                    <ul class="flex gap-x-8 text-lg font-inter" id="nav-items">
+                        <li><a href="/contactus/aboutus.html">About Us</a></li>
+                        <li><a href="/courses/courses.html">Courses</a></li>
+                        <li><a href="/contactus/facilities.html">Facilities</a></li>
+                        <li><a href="/contactus/gallery.html">Gallery</a></li>
+                        <li><a href="/contactus/contactus.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Enquire Button -->
+                <!-- <div class="hidden lg:flex justify-center items-center">
+                    <button
+                        class="bg-gradient-to-r from-rose-700 to-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-gradient-to-l hover:from-indigo-600 hover:to-rose-700 hover:text-rose-200"
+                        id="btn-nav">
+                        Enquire Now
+                    </button>
+                </div> -->
+            </nav>
+        </div>
+
+        <!-- Mobile Sidebar -->
+        <div id="sidebar"
+            class="fixed inset-y-0 left-0 w-3/4 bg-gradient-to-l from-rose-700 to-indigo-600 text-white z-50 transition-transform duration-300 transform -translate-x-full">
+            <button id="close-sidebar" class="absolute top-4 right-4">
+                <!-- Close icon -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+            <ul class="flex flex-col items-start gap-y-4 p-4 text-lg font-inter">
+                <li><a href="/contactus/aboutus.html">About Us</a></li>
+                <li><a href="/courses/courses.html">Courses</a></li>
+                <li><a href="/contactus/facilities.html">Facilities</a></li>
+                <li><a href="/contactus/gallery.html">Gallery</a></li>
+                <li><a href="/contactus/contactus.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="//unpkg.com/alpinejs"></script>
+<div x-data="{ 
+            openTab: 1,
+            activeClasses: 'border-l border-t border-r rounded-t text-blue-700',
+            inactiveClasses: 'text-blue-500 hover:text-blue-700'
+        }" class="p-6">
+    <ul class="flex border-b">
+        <li @click="openTab = 1" :class="{ '-mb-px': openTab === 1 }" class="-mb-px mr-1">
+            <a href="#" :class="openTab === 1 ? activeClasses : inactiveClasses"
+                class="w-full flex justify-center font-medium rounded-l px-5 py-2 border bg-white text-gray-800 border-gray-200 hover:bg-gray-100">
+                Paramedical 
+            </a>
+        </li>
+        <li @click="openTab = 2" :class="{ '-mb-px': openTab === 2 }" class="mr-1">
+            <!-- Set active class by using :class provided by Alpine -->
+            <a href="#" :class="openTab === 2 ? activeClasses : inactiveClasses"
+                class="w-full flex justify-center font-medium rounded-l px-5 py-2 border bg-white text-gray-800 border-gray-200 hover:bg-gray-100">
+                Hospitality 
+            </a>
+        </li>
+        
+    </ul>
+    <div class="w-full">
+        <div x-show="openTab === 1">
+            <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
+
+    <div class="border-b mb-5 flex justify-between text-sm">
+        <div class="text-indigo-600 flex items-center pb-2 pr-2 border-b-2 border-indigo-600 uppercase">
+            <svg class="h-6 mr-3" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455.005 455.005"
+                style="enable-background:new 0 0 455.005 455.005;" xml:space="preserve">
+                <g>
+                    <path d="M446.158,267.615c-5.622-3.103-12.756-2.421-19.574,1.871l-125.947,79.309c-3.505,2.208-4.557,6.838-2.35,10.343 c2.208,3.505,6.838,4.557,10.343,2.35l125.947-79.309c2.66-1.675,4.116-1.552,4.331-1.432c0.218,0.12,1.096,1.285,1.096,4.428 c0,8.449-6.271,19.809-13.42,24.311l-122.099,76.885c-6.492,4.088-12.427,5.212-16.284,3.084c-3.856-2.129-6.067-7.75-6.067-15.423 c0-19.438,13.896-44.61,30.345-54.967l139.023-87.542c2.181-1.373,3.503-3.77,3.503-6.347s-1.323-4.974-3.503-6.347L184.368,50.615 c-2.442-1.538-5.551-1.538-7.993,0L35.66,139.223C15.664,151.815,0,180.188,0,203.818v4c0,23.63,15.664,52.004,35.66,64.595 l209.292,131.791c3.505,2.207,8.136,1.154,10.343-2.35c2.207-3.505,1.155-8.136-2.35-10.343L43.653,259.72 C28.121,249.941,15,226.172,15,207.818v-4c0-18.354,13.121-42.122,28.653-51.902l136.718-86.091l253.059,159.35l-128.944,81.196 c-20.945,13.189-37.352,42.909-37.352,67.661c0,13.495,4.907,23.636,13.818,28.555c3.579,1.976,7.526,2.956,11.709,2.956 c6.231,0,12.985-2.176,19.817-6.479l122.099-76.885c11.455-7.213,20.427-23.467,20.427-37.004 C455.004,277.119,451.78,270.719,446.158,267.615z"> </path>
+                    <path d="M353.664,232.676c2.492,0,4.928-1.241,6.354-3.504c2.207-3.505,1.155-8.136-2.35-10.343l-173.3-109.126 c-3.506-2.207-8.136-1.154-10.343,2.35c-2.207,3.505-1.155,8.136,2.35,10.343l173.3,109.126 C350.916,232.303,352.298,232.676,353.664,232.676z"> </path>
+                    <path d="M323.68,252.58c2.497,0,4.938-1.246,6.361-3.517c2.201-3.509,1.14-8.138-2.37-10.338L254.46,192.82 c-3.511-2.202-8.139-1.139-10.338,2.37c-2.201,3.51-1.14,8.138,2.37,10.338l73.211,45.905 C320.941,252.21,322.318,252.58,323.68,252.58z"> </path>
+                    <path d="M223.903,212.559c-3.513-2.194-8.14-1.124-10.334,2.39c-2.194,3.514-1.124,8.14,2.39,10.334l73.773,46.062 c1.236,0.771,2.608,1.139,3.965,1.139c2.501,0,4.947-1.251,6.369-3.529c2.194-3.514,1.124-8.14-2.39-10.334L223.903,212.559z"> </path>
+                    <path d="M145.209,129.33l-62.33,39.254c-2.187,1.377-3.511,3.783-3.503,6.368s1.345,4.983,3.54,6.348l74.335,46.219 c1.213,0.754,2.586,1.131,3.96,1.131c1.417,0,2.833-0.401,4.071-1.201l16.556-10.7c3.479-2.249,4.476-6.891,2.228-10.37 c-2.248-3.479-6.891-4.475-10.37-2.228l-12.562,8.119l-60.119-37.38l48.2-30.355l59.244,37.147l-6.907,4.464 c-3.479,2.249-4.476,6.891-2.228,10.37c2.249,3.479,6.894,4.476,10.37,2.228l16.8-10.859c2.153-1.392,3.446-3.787,3.429-6.351 c-0.018-2.563-1.344-4.94-3.516-6.302l-73.218-45.909C150.749,127.792,147.647,127.795,145.209,129.33z"> </path>
+                    <path d="M270.089,288.846c2.187-3.518,1.109-8.142-2.409-10.329l-74.337-46.221c-3.518-2.188-8.143-1.109-10.329,2.409 c-2.187,3.518-1.109,8.142,2.409,10.329l74.337,46.221c1.232,0.767,2.601,1.132,3.953,1.132 C266.219,292.387,268.669,291.131,270.089,288.846z"> </path>
+                    <path d="M53.527,192.864c-2.187,3.518-1.109,8.142,2.409,10.329l183.478,114.081c1.232,0.767,2.601,1.132,3.953,1.132 c2.506,0,4.956-1.256,6.376-3.541c2.187-3.518,1.109-8.142-2.409-10.329L63.856,190.455 C60.338,188.266,55.714,189.346,53.527,192.864z"> </path>
+                </g>
+            </svg>
+            <a href="#" class="font-semibold inline-block">Paramedical courses</a>
+        </div>
+    
+    </div>
+
+    <!-- PARAMEDICAL COURSES -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-10 gap-10">   
+
+<!-- ENTIRE SECTION -->
+
+<!-- ENTIRE CARD 1 MODAL -->
+
+
+        <!-- CARD 1 -->
+        <button data-modal-target="timeline-modal" data-modal-toggle="timeline-modal" class="block text-white bg-black hover:bg-black  rounded-lg text-sm text-center" type="button">
+            <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                <a href="#"></a>
+                <div class="relative"><a href="#">
+                        <img class="w-full"
+                            src="https://images.pexels.com/photos/1600727/pexels-photo-1600727.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                            alt="Sunset in the mountains">
+                        <div
+                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                        </div>
+                    </a><a href="#!">
+                        <div
+                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                            DICU                        </div>
+                    </a>
+                </div>
+                <div class="px-6 py-2 mb-auto">
+                    <a href="#"
+                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out  mb-2">ADMISSIONS OPEN 🎓</a>
+                    <p class="text-gray-500 text-sm">
+                       <span class="text-2xl font-bold text-black">
+                        DICU
+                       </span>
+                       <br>
+                       (DIPLOMA IN INTENSIVE CARE
+                       UNIT).
+                    </p>
+                </div>
+                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                            xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="ml-1"> 10 days ago</span>
+                    </span>
+    
+                </div>
+            </div>
+          </button>
+               <!-- CARD 1 -->
+
+           <!-- DESCRIPTION CARD 1 -->
+           <div id="timeline-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-md max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                               DESCRIPTION
+                            </h3>
+                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="timeline-modal">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5">
+                           
+      
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+         
+           <div class="p-5">
+              <a href="#" class="">
+                  <h5 class=" text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">DICU</h5>
+                  <p class="text-gray-500 text-sm mb-2">   (DIPLOMA IN INTENSIVE CARE
+                    UNIT).</p>
+              </a>
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 overflow-y-auto ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus hic architecto deserunt repellat quidem. Veritatis architecto vitae iste sed facere omnis. Est totam porro minima aliquam corporis voluptate hic. Temporibus quisquam ut numquam repellendus sunt dolorum? Obcaecati quisquam non voluptas optio molestias pariatur eligendi quo voluptates. consequatur temporibus ut iure, sit eaque fuga et perspiciatis impedit. Consectetur voluptatibus reprehenderit vero odio recusandae et! Cumque veritatis voluptatum expedita? Impedit temporibus in vero id atque laboriosam.  </p>
+              <a href="/contactus/contactus.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  Enquire Us!
+                   <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+              </a>
+             </div>
+           </div>
+      
+                            <a href="/Assets/APHI_COURSES_LIST.pdf" download="APHI™.pdf" class="btn text-white inline-flex w-full justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Download Brochure</a>
+      
+                        </div>
+                    </div>
+            </div>
+        </div> 
+           <!-- DESCRIPTION CARD 1 -->
+
+<!-- ENTIRE CARD 1 MODAL -->
+
+
+<!-- ENTIRE CARD 1 MODAL -->
+
+
+        <!-- CARD 2 -->
+        <button data-modal-target="timeline-modal2" data-modal-toggle="timeline-modal2" class="block text-white bg-black hover:bg-black  rounded-lg text-sm text-center" type="button">
+            <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                <a href="#"></a>
+                <div class="relative"><a href="#">
+                        <img class="w-full"
+                            src="https://images.pexels.com/photos/1600727/pexels-photo-1600727.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                            alt="Sunset in the mountains">
+                        <div
+                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                        </div>
+                    </a><a href="#!">
+                        <div
+                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                            DMLT                        </div>
+                    </a>
+                </div>
+                <div class="px-6 py-2 mb-auto">
+                    <a href="#"
+                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out  mb-2">ADMISSIONS OPEN 🎓</a>
+                    <p class="text-gray-500 text-sm">
+                       <span class="text-2xl font-bold text-black">
+                        DMLT
+                       </span>
+                       <br>
+                       (DIPLOMA IN MEDICAL
+LABORATORY TECHNOLOGY).
+                    </p>
+                </div>
+                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                            xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="ml-1"> 10 days ago</span>
+                    </span>
+    
+                </div>
+            </div>
+          </button>
+               <!-- CARD 2 -->
+
+           <!-- DESCRIPTION CARD 2 -->
+           <div id="timeline-modal2" tabindex="-1" aria-hidden="true" class="hidden overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-md max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                               DESCRIPTION
+                            </h3>
+                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="timeline-modal">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5">
+                           
+      
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+         
+           <div class="p-5">
+              <a href="#" class="">
+                  <h5 class=" text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">DMLT</h5>
+                  <p class="text-gray-500 text-sm mb-2">   (DIPLOMA IN MEDICAL
+                    LABORATORY TECHNOLOGY).</p>
+              </a>
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 overflow-y-auto ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus hic architecto deserunt repellat quidem. Veritatis architecto vitae iste sed facere omnis. Est totam porro minima aliquam corporis voluptate hic. Temporibus quisquam ut numquam repellendus sunt dolorum? Obcaecati quisquam non voluptas optio molestias pariatur eligendi quo voluptates. consequatur temporibus ut iure, sit eaque fuga et perspiciatis impedit. Consectetur voluptatibus reprehenderit vero odio recusandae et! Cumque veritatis voluptatum expedita? Impedit temporibus in vero id atque laboriosam.  </p>
+              <a href="/contactus/contactus.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  Enquire Us!
+                   <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+              </a>
+             </div>
+           </div>
+      
+                            <a href="/Assets/APHI_COURSES_LIST.pdf" download="APHI™.pdf" class="btn text-white inline-flex w-full justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Download Brochure</a>
+      
+                        </div>
+                    </div>
+            </div>
+        </div> 
+           <!-- DESCRIPTION CARD 2 -->
+
+<!-- ENTIRE CARD 2 MODAL -->
+
+
+     
+        <!-- CARD 3 ENTIRE-->
+        <!-- CARD 3 -->
+        <button data-modal-target="timeline-modal3" data-modal-toggle="timeline-modal3" class="block text-white bg-black hover:bg-black  rounded-lg text-sm text-center" type="button">
+            <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                <a href="#"></a>
+                <div class="relative"><a href="#">
+                        <img class="w-full"
+                            src="https://images.pexels.com/photos/6086/food-salad-healthy-vegetables.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                            alt="Sunset in the mountains">
+                        <div
+                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                        </div>
+                    </a><a href="#!">
+                        <div
+                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                            DRIT
+                        </div>
+                    </a>
+                </div>
+                <div class="px-6 py-2 mb-auto">
+                    <a href="#"
+                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out  mb-2">ADMISSIONS OPEN 🎓</a>
+                    <p class="text-gray-500 text-sm">
+                       <span class="text-2xl font-bold text-black">
+                        DRIT
+                       </span>
+                       <br>
+                       (DIPLOMA IN RADIOLOGY &
+                       IMAGING TECHNOLOGY).
+                    </p>
+                </div>
+                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                            xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="ml-1">16 hours ago</span>
+                    </span>
+    
+                    
+                </div>
+            </div>
+          </button>
+                  <!-- CARD 3 ENTIRE -->
+<!-- CARD DESCRIPTION 3-->
+<div id="timeline-modal3" tabindex="-1" aria-hidden="true" class="hidden overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-md max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                       DESCRIPTION
+                    </h3>
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="timeline-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="p-4 md:p-5">
+                   
+
+    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+ 
+   <div class="p-5">
+      <a href="#" class="">
+          <h5 class=" text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">DRIT</h5>
+          <p class="text-gray-500 text-sm mb-2">  (DIPLOMA IN RADIOLOGY &
+            IMAGING TECHNOLOGY).</p>
+      </a>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 overflow-y-auto ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus hic architecto deserunt repellat quidem. Veritatis architecto vitae iste sed facere omnis. Est totam porro minima aliquam corporis voluptate hic. Temporibus quisquam ut numquam repellendus sunt dolorum? Obcaecati quisquam non voluptas optio molestias pariatur eligendi quo voluptates. consequatur temporibus ut iure, sit eaque fuga et perspiciatis impedit. Consectetur voluptatibus reprehenderit vero odio recusandae et! Cumque veritatis voluptatum expedita? Impedit temporibus in vero id atque laboriosam.  </p>
+      <a href="/contactus/contactus.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          Enquire Us!
+           <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+      </a>
+     </div>
+   </div>
+
+                    <a href="/Assets/APHI_COURSES_LIST.pdf" download="APHI™.pdf" class="btn text-white inline-flex w-full justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Download Brochure</a>
+
+                </div>
+            </div>
+    </div>
+</div> 
+<!-- CARD DESCRIPTION 3-->
+
+     <!-- CARD 3 ENTIRE-->
+
+
+<!-- ENTIRE CARD 4 WITH MODAL -->
+
+<!-- CARD 4 -->
+<button data-modal-target="timeline-modal4" data-modal-toggle="timeline-modal4" class="block text-white bg-black hover:bg-black  rounded-lg text-sm text-center" type="button">
+    <div class="rounded overflow-hidden shadow-lg flex flex-col">
+        <a href="#"></a>
+        <div class="relative"><a href="#">
+                <img class="w-full"
+                    src="https://images.pexels.com/photos/1600727/pexels-photo-1600727.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                    alt="Sunset in the mountains">
+                <div
+                    class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                </div>
+            </a><a href="#!">
+                <div
+                    class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                    DDT                        </div>
+            </a>
+        </div>
+        <div class="px-6 py-2 mb-auto">
+            <a href="#"
+                class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out  mb-2">ADMISSIONS OPEN 🎓</a>
+            <p class="text-gray-500 text-sm">
+               <span class="text-2xl font-bold text-black">
+                DDT
+               </span>
+               <br>
+               (DIPLOMA IN DAILYSIS TECHNOLOGY)
+            </p>
+        </div>
+        <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
+            <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                    y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                    xml:space="preserve">
+                    <g>
+                        <g>
+                            <path
+                                d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+                <span class="ml-1"> 10 days ago</span>
+            </span>
+
+        </div>
+    </div>
+  </button>
+<!-- CARD 4 -->
+  <!-- CARD DESCRIPTION --> <!-- CARD 4 -->
+  <div id="timeline-modal4" tabindex="-1" aria-hidden="true" class="hidden overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+      <div class="relative p-4 w-full max-w-md max-h-full">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                  <!-- Modal header -->
+                  <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                         DESCRIPTION
+                      </h3>
+                      <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="timeline-modal">
+                          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                          </svg>
+                          <span class="sr-only">Close modal</span>
+                      </button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="p-4 md:p-5">
+                     
+
+      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+   
+     <div class="p-5">
+        <a href="#" class="">
+            <h5 class=" text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">DDT</h5>
+            <p class="text-gray-500 text-sm mb-2"> (DIPLOMA IN DAILYSIS TECHNOLOGY)</p>
+        </a>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 overflow-y-auto ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus hic architecto deserunt repellat quidem. Veritatis architecto vitae iste sed facere omnis. Est totam porro minima aliquam corporis voluptate hic. Temporibus quisquam ut numquam repellendus sunt dolorum? Obcaecati quisquam non voluptas optio molestias pariatur eligendi quo voluptates. consequatur temporibus ut iure, sit eaque fuga et perspiciatis impedit. Consectetur voluptatibus reprehenderit vero odio recusandae et! Cumque veritatis voluptatum expedita? Impedit temporibus in vero id atque laboriosam.  </p>
+        <a href="/contactus/contactus.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Enquire Us!
+             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+        </a>
+       </div>
+     </div>
+
+                      <a href="/Assets/APHI_COURSES_LIST.pdf" download="APHI™.pdf" class="btn text-white inline-flex w-full justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Download Brochure</a>
+
+                  </div>
+              </div>
+      </div>
+  </div> 
+  <!-- CARD DESCRIPTION --> <!-- CARD 4 -->
+<!-- ENTIRE CARD 4 WITH MODAL -->
+
+
+<!-- ENTIRE CARD 5 MODAL -->
+
+
+        <!-- CARD 5 -->
+        <button data-modal-target="timeline-modal5" data-modal-toggle="timeline-modal5" class="block text-white bg-black hover:bg-black  rounded-lg text-sm text-center" type="button">
+            <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                <a href="#"></a>
+                <div class="relative"><a href="#">
+                        <img class="w-full"
+                            src="https://images.pexels.com/photos/1600727/pexels-photo-1600727.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                            alt="Sunset in the mountains">
+                        <div
+                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                        </div>
+                    </a><a href="#!">
+                        <div
+                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                           DOTT                    </div>
+                    </a>
+                </div>
+                <div class="px-6 py-2 mb-auto">
+                    <a href="#"
+                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out  mb-2">ADMISSIONS OPEN 🎓</a>
+                    <p class="text-gray-500 text-sm">
+                       <span class="text-2xl font-bold text-black">
+                        DOTT
+                       </span>
+                       <br>
+                       (DIPLOMA IN OPERATION THEATRE
+                       TECHNOLOGY)
+                    </p>
+                </div>
+                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                            xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="ml-1"> 10 days ago</span>
+                    </span>
+    
+                </div>
+            </div>
+          </button>
+               <!-- CARD 5 -->
+
+           <!-- DESCRIPTION CARD 5 -->
+           <div id="timeline-modal5" tabindex="-1" aria-hidden="true" class="hidden overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-md max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                               DESCRIPTION
+                            </h3>
+                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="timeline-modal">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5">
+                           
+      
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+         
+           <div class="p-5">
+              <a href="#" class="">
+                  <h5 class=" text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">DOTT</h5>
+                  <p class="text-gray-500 text-sm mb-2">  (DIPLOMA IN OPERATION THEATRE
+                    TECHNOLOGY)</p>
+              </a>
+              <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 overflow-y-auto ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus hic architecto deserunt repellat quidem. Veritatis architecto vitae iste sed facere omnis. Est totam porro minima aliquam corporis voluptate hic. Temporibus quisquam ut numquam repellendus sunt dolorum? Obcaecati quisquam non voluptas optio molestias pariatur eligendi quo voluptates. consequatur temporibus ut iure, sit eaque fuga et perspiciatis impedit. Consectetur voluptatibus reprehenderit vero odio recusandae et! Cumque veritatis voluptatum expedita? Impedit temporibus in vero id atque laboriosam.  </p>
+              <a href="/contactus/contactus.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  Enquire Us!
+                   <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+              </a>
+             </div>
+           </div>
+      
+                            <a href="/Assets/APHI_COURSES_LIST.pdf" download="APHI™.pdf" class="btn text-white inline-flex w-full justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Download Brochure</a>
+      
+                        </div>
+                    </div>
+            </div>
+        </div> 
+           <!-- DESCRIPTION CARD 5 -->
+
+<!-- ENTIRE CARD 5 MODAL -->
+
+
+     
+        <!-- CARD 6 ENTIRE-->
+        <!-- CARD 6 -->
+        <button data-modal-target="timeline-modal6" data-modal-toggle="timeline-modal6" class="block text-white bg-black hover:bg-black  rounded-lg text-sm text-center" type="button">
+            <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                <a href="#"></a>
+                <div class="relative"><a href="#">
+                        <img class="w-full"
+                            src="https://images.pexels.com/photos/6086/food-salad-healthy-vegetables.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                            alt="Sunset in the mountains">
+                        <div
+                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                        </div>
+                    </a><a href="#!">
+                        <div
+                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                            DPT
+                        </div>
+                    </a>
+                </div>
+                <div class="px-6 py-2 mb-auto">
+                    <a href="#"
+                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out  mb-2">ADMISSIONS OPEN 🎓</a>
+                    <p class="text-gray-500 text-sm">
+                       <span class="text-2xl font-bold text-black">
+                        DPT
+                       </span>
+                       <br>
+                       (DIPLOMA IN PHYSIOTHERAPY).
+                    </p>
+                </div>
+                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                            xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="ml-1">16 hours ago</span>
+                    </span>
+    
+                    
+                </div>
+            </div>
+          </button>
+                  <!-- CARD 6 ENTIRE -->
+<!-- CARD DESCRIPTION 6-->
+<div id="timeline-modal6" tabindex="-1" aria-hidden="true" class="hidden overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-md max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                       DESCRIPTION
+                    </h3>
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="timeline-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="p-4 md:p-5">
+                   
+
+    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+ 
+   <div class="p-5">
+      <a href="#" class="">
+          <h5 class=" text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">DPT</h5>
+          <p class="text-gray-500 text-sm mb-2"> (DIPLOMA IN PHYSIOTHERAPY).</p>
+      </a>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 overflow-y-auto ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus hic architecto deserunt repellat quidem. Veritatis architecto vitae iste sed facere omnis. Est totam porro minima aliquam corporis voluptate hic. Temporibus quisquam ut numquam repellendus sunt dolorum? Obcaecati quisquam non voluptas optio molestias pariatur eligendi quo voluptates. consequatur temporibus ut iure, sit eaque fuga et perspiciatis impedit. Consectetur voluptatibus reprehenderit vero odio recusandae et! Cumque veritatis voluptatum expedita? Impedit temporibus in vero id atque laboriosam.  </p>
+      <a href="/contactus/contactus.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          Enquire Us!
+           <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+      </a>
+     </div>
+   </div>
+
+                    <a href="/Assets/APHI_COURSES_LIST.pdf" download="APHI™.pdf" class="btn text-white inline-flex w-full justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Download Brochure</a>
+
+                </div>
+            </div>
+    </div>
+</div> 
+<!-- CARD DESCRIPTION 6-->
+
+     <!-- CARD 6 ENTIRE-->
+
+
+
+
+
+
+
+
+
+</div>
+    <!-- PARAMEDICAL COURSES -->
+
+
+
+
+<!-- HOSPITALITY COURSES -->
+
+</div>
+        </div>
+        <div x-show="openTab === 2">
+            <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
+
+                <div class="border-b mb-5 flex justify-between text-sm">
+                    <div class="text-indigo-600 flex items-center pb-2 pr-2 border-b-2 border-indigo-600 uppercase">
+                        <svg class="h-6 mr-3" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455.005 455.005"
+                            style="enable-background:new 0 0 455.005 455.005;" xml:space="preserve">
+                            <g>
+                                <path d="M446.158,267.615c-5.622-3.103-12.756-2.421-19.574,1.871l-125.947,79.309c-3.505,2.208-4.557,6.838-2.35,10.343 c2.208,3.505,6.838,4.557,10.343,2.35l125.947-79.309c2.66-1.675,4.116-1.552,4.331-1.432c0.218,0.12,1.096,1.285,1.096,4.428 c0,8.449-6.271,19.809-13.42,24.311l-122.099,76.885c-6.492,4.088-12.427,5.212-16.284,3.084c-3.856-2.129-6.067-7.75-6.067-15.423 c0-19.438,13.896-44.61,30.345-54.967l139.023-87.542c2.181-1.373,3.503-3.77,3.503-6.347s-1.323-4.974-3.503-6.347L184.368,50.615 c-2.442-1.538-5.551-1.538-7.993,0L35.66,139.223C15.664,151.815,0,180.188,0,203.818v4c0,23.63,15.664,52.004,35.66,64.595 l209.292,131.791c3.505,2.207,8.136,1.154,10.343-2.35c2.207-3.505,1.155-8.136-2.35-10.343L43.653,259.72 C28.121,249.941,15,226.172,15,207.818v-4c0-18.354,13.121-42.122,28.653-51.902l136.718-86.091l253.059,159.35l-128.944,81.196 c-20.945,13.189-37.352,42.909-37.352,67.661c0,13.495,4.907,23.636,13.818,28.555c3.579,1.976,7.526,2.956,11.709,2.956 c6.231,0,12.985-2.176,19.817-6.479l122.099-76.885c11.455-7.213,20.427-23.467,20.427-37.004 C455.004,277.119,451.78,270.719,446.158,267.615z"> </path>
+                                <path d="M353.664,232.676c2.492,0,4.928-1.241,6.354-3.504c2.207-3.505,1.155-8.136-2.35-10.343l-173.3-109.126 c-3.506-2.207-8.136-1.154-10.343,2.35c-2.207,3.505-1.155,8.136,2.35,10.343l173.3,109.126 C350.916,232.303,352.298,232.676,353.664,232.676z"> </path>
+                                <path d="M323.68,252.58c2.497,0,4.938-1.246,6.361-3.517c2.201-3.509,1.14-8.138-2.37-10.338L254.46,192.82 c-3.511-2.202-8.139-1.139-10.338,2.37c-2.201,3.51-1.14,8.138,2.37,10.338l73.211,45.905 C320.941,252.21,322.318,252.58,323.68,252.58z"> </path>
+                                <path d="M223.903,212.559c-3.513-2.194-8.14-1.124-10.334,2.39c-2.194,3.514-1.124,8.14,2.39,10.334l73.773,46.062 c1.236,0.771,2.608,1.139,3.965,1.139c2.501,0,4.947-1.251,6.369-3.529c2.194-3.514,1.124-8.14-2.39-10.334L223.903,212.559z"> </path>
+                                <path d="M145.209,129.33l-62.33,39.254c-2.187,1.377-3.511,3.783-3.503,6.368s1.345,4.983,3.54,6.348l74.335,46.219 c1.213,0.754,2.586,1.131,3.96,1.131c1.417,0,2.833-0.401,4.071-1.201l16.556-10.7c3.479-2.249,4.476-6.891,2.228-10.37 c-2.248-3.479-6.891-4.475-10.37-2.228l-12.562,8.119l-60.119-37.38l48.2-30.355l59.244,37.147l-6.907,4.464 c-3.479,2.249-4.476,6.891-2.228,10.37c2.249,3.479,6.894,4.476,10.37,2.228l16.8-10.859c2.153-1.392,3.446-3.787,3.429-6.351 c-0.018-2.563-1.344-4.94-3.516-6.302l-73.218-45.909C150.749,127.792,147.647,127.795,145.209,129.33z"> </path>
+                                <path d="M270.089,288.846c2.187-3.518,1.109-8.142-2.409-10.329l-74.337-46.221c-3.518-2.188-8.143-1.109-10.329,2.409 c-2.187,3.518-1.109,8.142,2.409,10.329l74.337,46.221c1.232,0.767,2.601,1.132,3.953,1.132 C266.219,292.387,268.669,291.131,270.089,288.846z"> </path>
+                                <path d="M53.527,192.864c-2.187,3.518-1.109,8.142,2.409,10.329l183.478,114.081c1.232,0.767,2.601,1.132,3.953,1.132 c2.506,0,4.956-1.256,6.376-3.541c2.187-3.518,1.109-8.142-2.409-10.329L63.856,190.455 C60.338,188.266,55.714,189.346,53.527,192.864z"> </path>
+                            </g>
+                        </svg>
+                        <a href="#" class="font-semibold inline-block">Hospitality courses</a>
+                    </div>
+                
+                </div>
+            
+            
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">       
+                    <!-- ENTIRE SECTION -->
+                    
+                    <!-- ENTIRE CARD 1 WITH MODAL -->
+                    
+                    <!-- CARD 1 -->
+                    <button data-modal-target="timeline-modal4" data-modal-toggle="timeline-modal4" class="block text-white bg-black hover:bg-black  rounded-lg text-sm text-center" type="button">
+                        <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                            <a href="#"></a>
+                            <div class="relative"><a href="#">
+                                    <img class="w-full"
+                                        src="https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                                        alt="Sunset in the mountains">
+                                    <div
+                                        class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                                    </div>
+                                </a><a href="#!">
+                                    <div
+                                        class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                        DFB                        </div>
+                                </a>
+                            </div>
+                            <div class="px-6 py-2 mb-auto">
+                                <a href="#"
+                                    class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out  mb-2">ADMISSIONS OPEN 🎓</a>
+                                <p class="text-gray-500 text-sm">
+                                   <span class="text-2xl font-bold text-black">
+                                    DFB
+                                   </span>
+                                   <br>
+                                   (DIPLOMA IN FOOD & BEVERAGE).
+                                </p>
+                            </div>
+                            <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
+                                <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                                    <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                        y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                                        xml:space="preserve">
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    <span class="ml-1"> 10 days ago</span>
+                                </span>
+                    
+                            </div>
+                        </div>
+                      </button>
+                    <!-- CARD 1 -->
+                      <!-- CARD DESCRIPTION --> <!-- CARD 1 -->
+                      <div id="timeline-modal4" tabindex="-1" aria-hidden="true" class="hidden overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                          <div class="relative p-4 w-full max-w-md max-h-full">
+                              <!-- Modal content -->
+                              <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                      <!-- Modal header -->
+                                      <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                             DESCRIPTION
+                                          </h3>
+                                          <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="timeline-modal">
+                                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                              </svg>
+                                              <span class="sr-only">Close modal</span>
+                                          </button>
+                                      </div>
+                                      <!-- Modal body -->
+                                      <div class="p-4 md:p-5">
+                                         
+                    
+                          <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                       
+                         <div class="p-5">
+                            <a href="#" class="">
+                                <h5 class=" text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">DFB</h5>
+                                <p class="text-gray-500 text-sm mb-2">(DIPLOMA IN FOOD & BEVERAGE).</p>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 overflow-y-auto ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus hic architecto deserunt repellat quidem. Veritatis architecto vitae iste sed facere omnis. Est totam porro minima aliquam corporis voluptate hic. Temporibus quisquam ut numquam repellendus sunt dolorum? Obcaecati quisquam non voluptas optio molestias pariatur eligendi quo voluptates. consequatur temporibus ut iure, sit eaque fuga et perspiciatis impedit. Consectetur voluptatibus reprehenderit vero odio recusandae et! Cumque veritatis voluptatum expedita? Impedit temporibus in vero id atque laboriosam.  </p>
+                            <a href="/contactus/contactus.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Enquire Us!
+                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                </svg>
+                            </a>
+                           </div>
+                         </div>
+                    
+                                          <a href="/Assets/APHI_COURSES_LIST.pdf" download="APHI™.pdf" class="btn text-white inline-flex w-full justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Download Brochure</a>
+                    
+                                      </div>
+                                  </div>
+                          </div>
+                      </div> 
+                      <!-- CARD DESCRIPTION --> <!-- CARD 1 -->
+                    <!-- ENTIRE CARD 1 WITH MODAL -->
+                    
+                    
+                    <!-- ENTIRE CARD 2 MODAL -->
+                    
+                    
+                            <!-- CARD 2 -->
+                            <button data-modal-target="timeline-modal5" data-modal-toggle="timeline-modal5" class="block text-white bg-black hover:bg-black  rounded-lg text-sm text-center" type="button">
+                                <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                                    <a href="#"></a>
+                                    <div class="relative"><a href="#">
+                                            <img class="w-full"
+                                                src="https://images.pexels.com/photos/1600727/pexels-photo-1600727.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                                                alt="Sunset in the mountains">
+                                            <div
+                                                class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                                            </div>
+                                        </a><a href="#!">
+                                            <div
+                                                class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                                DMLT                        </div>
+                                        </a>
+                                    </div>
+                                    <div class="px-6 py-2 mb-auto">
+                                        <a href="#"
+                                            class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out  mb-2">ADMISSIONS OPEN 🎓</a>
+                                        <p class="text-gray-500 text-sm">
+                                           <span class="text-2xl font-bold text-black">
+                                            DHM
+                                           </span>
+                                           <br>
+                                           (DIPLOMA IN HOSPITALITY MANAGEMENT).
+                                        </p>
+                                    </div>
+                                    <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
+                                        <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                                            <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                                y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                                                xml:space="preserve">
+                                                <g>
+                                                    <g>
+                                                        <path
+                                                            d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <span class="ml-1"> 10 days ago</span>
+                                        </span>
+                        
+                                    </div>
+                                </div>
+                              </button>
+                                   <!-- CARD 2 -->
+                    
+                               <!-- DESCRIPTION CARD 2 -->
+                               <div id="timeline-modal5" tabindex="-1" aria-hidden="true" class="hidden overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                <div class="relative p-4 w-full max-w-md max-h-full">
+                                    <!-- Modal content -->
+                                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                            <!-- Modal header -->
+                                            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                                   DESCRIPTION
+                                                </h3>
+                                                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="timeline-modal">
+                                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                                    </svg>
+                                                    <span class="sr-only">Close modal</span>
+                                                </button>
+                                            </div>
+                                            <!-- Modal body -->
+                                            <div class="p-4 md:p-5">
+                                               
+                          
+                                <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                             
+                               <div class="p-5">
+                                  <a href="#" class="">
+                                      <h5 class=" text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">DHM</h5>
+                                      <p class="text-gray-500 text-sm mb-2">   (DIPLOMA IN HOSPITALITY MANAGEMENT).</p>
+                                  </a>
+                                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 overflow-y-auto ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus hic architecto deserunt repellat quidem. Veritatis architecto vitae iste sed facere omnis. Est totam porro minima aliquam corporis voluptate hic. Temporibus quisquam ut numquam repellendus sunt dolorum? Obcaecati quisquam non voluptas optio molestias pariatur eligendi quo voluptates. consequatur temporibus ut iure, sit eaque fuga et perspiciatis impedit. Consectetur voluptatibus reprehenderit vero odio recusandae et! Cumque veritatis voluptatum expedita? Impedit temporibus in vero id atque laboriosam.  </p>
+                                  <a href="/contactus/contactus.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                      Enquire Us!
+                                       <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                      </svg>
+                                  </a>
+                                 </div>
+                               </div>
+                          
+                                                <a href="/Assets/APHI_COURSES_LIST.pdf" download="APHI™.pdf" class="btn text-white inline-flex w-full justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Download Brochure</a>
+                          
+                                            </div>
+                                        </div>
+                                </div>
+                            </div> 
+                               <!-- DESCRIPTION CARD 2 -->
+                    
+                    <!-- ENTIRE CARD 2 MODAL -->
+                    
+                    
+                         
+
+
+
+
+
+
+
+
+
+                    <!-- IF IN CASE WANNA ADD  -->
+
+
+
+                            <!-- CARD 3 ENTIRE-->
+                            <!-- CARD 3 -->
+                            <!-- <button data-modal-target="timeline-modal6" data-modal-toggle="timeline-modal6" class="block text-white bg-black hover:bg-black  rounded-lg text-sm text-center" type="button">
+                                <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                                    <a href="#"></a>
+                                    <div class="relative"><a href="#">
+                                            <img class="w-full"
+                                                src="https://images.pexels.com/photos/6086/food-salad-healthy-vegetables.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                                                alt="Sunset in the mountains">
+                                            <div
+                                                class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                                            </div>
+                                        </a><a href="#!">
+                                            <div
+                                                class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                                DRIT
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="px-6 py-2 mb-auto">
+                                        <a href="#"
+                                            class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out  mb-2">ADMISSIONS OPEN 🎓</a>
+                                        <p class="text-gray-500 text-sm">
+                                           <span class="text-2xl font-bold text-black">
+                                            DRIT
+                                           </span>
+                                           <br>
+                                           (DIPLOMA IN RADIOLOGY &
+                                           IMAGING TECHNOLOGY).
+                                        </p>
+                                    </div>
+                                    <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
+                                        <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                                            <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                                y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                                                xml:space="preserve">
+                                                <g>
+                                                    <g>
+                                                        <path
+                                                            d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <span class="ml-1">16 hours ago</span>
+                                        </span>
+                        
+                                        
+                                    </div>
+                                </div>
+                              </button> -->
+                                      <!-- CARD 3 ENTIRE -->
+                    <!-- CARD DESCRIPTION 3-->
+                    <!-- <div id="timeline-modal6" tabindex="-1" aria-hidden="true" class="hidden overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        <div class="relative p-4 w-full max-w-md max-h-full">
+                             Modal content -->
+                            <!-- <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                    Modal header -->
+                                    <!-- <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                           DESCRIPTION
+                                        </h3>
+                                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="timeline-modal">
+                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                            </svg>
+                                            <span class="sr-only">Close modal</span>
+                                        </button>
+                                    </div> -->
+                                    <!-- Modal body -->
+                                    <!-- <div class="p-4 md:p-5">
+                                       
+                    
+                        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                     
+                       <div class="p-5">
+                          <a href="#" class="">
+                              <h5 class=" text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">DRIT</h5>
+                              <p class="text-gray-500 text-sm mb-2">  (DIPLOMA IN RADIOLOGY &
+                                IMAGING TECHNOLOGY).</p>
+                          </a>
+                          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 overflow-y-auto ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus hic architecto deserunt repellat quidem. Veritatis architecto vitae iste sed facere omnis. Est totam porro minima aliquam corporis voluptate hic. Temporibus quisquam ut numquam repellendus sunt dolorum? Obcaecati quisquam non voluptas optio molestias pariatur eligendi quo voluptates. consequatur temporibus ut iure, sit eaque fuga et perspiciatis impedit. Consectetur voluptatibus reprehenderit vero odio recusandae et! Cumque veritatis voluptatum expedita? Impedit temporibus in vero id atque laboriosam.  </p>
+                          <a href="/contactus/contactus.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                              Enquire Us!
+                               <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                              </svg>
+                          </a>
+                         </div>
+                       </div>
+                    
+                                        <a href="/Assets/APHI_COURSES_LIST.pdf" download="APHI™.pdf" class="btn text-white inline-flex w-full justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Download Brochure</a>
+                    
+                                    </div>
+                                </div> -->
+                        <!-- </div>
+                    </div>  -->
+                    <!-- CARD DESCRIPTION 3-->
+                    
+                         <!-- CARD 3 ENTIRE-->
+                    
+                    
+                    
+                    </div>
+            
+            </div>
+        </div>   
+    </div>
+</div>
+
+<!-- NULL -->
+
+<footer class="bg-white bg-gradient-to-l mt-10 from-rose-700 to-indigo-600 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+          <div class="mb-6 md:mb-0">
+              <a href="/index.html" class="flex items-center">
+                  <img src="../Assets/logo.jpg" class="h-20 me-3 rounded-lg" alt=" Logo" />
+                  <span class="self-center pl-2 text-1xl md:text-2xl font-semibold whitespace-nowrap dark:text-white">ASTHA PARAMEDICAL & <br>HOSPITALITY INSTITUTE</span>
+              </a>
+          </div>
+          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+              <div>
+                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                  <ul class="text-white dark:text-gray-400 font-medium">
+                      <li class="mb-4">
+                          <a href="/contactus/aboutus.html" class="hover:underline">About Us</a>
+                      </li>
+                      <li>
+                          <a href="/courses/courses.html" class="hover:underline">Courses </a>
+                      </li>
+                  </ul>
+              </div>
+              <div>
+                  <h2 class="mb-6 text-sm font-semibold text-black uppercase dark:text-gray-50">Follow us</h2>
+                  <ul class="text-white dark:text-gray-400 font-medium">
+                      <li class="mb-4">
+                          <a href="https://www.instagram.com/aphi_siliguri?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="hover:underline ">Instagram</a>
+                      </li>
+                      <li>
+                          <a href="https://www.facebook.com/ASTHAVTC/" class="hover:underline">Facebook</a>
+                      </li>
+                  </ul>
+              </div>
+              <div>
+                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                  <ul class="text-white dark:text-gray-400 font-medium">
+                      <li class="mb-4">
+                          <a href="#" class="hover:underline">Privacy Policy</a>
+                      </li>
+                      <li>
+                          <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <hr class="my-6 border-gray-200 sm:mx-auto text-white lg:my-8" />
+      <div class="sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm  sm:text-center text-white">© 2024 <a href="index.html" class="hover:underline">APHI™</a>. All Rights Reserved.
+          </span>
+          <div class="flex mt-4 sm:justify-center sm:mt-0">
+              <a href="https://www.facebook.com/ASTHAVTC/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                <img src="../Assets/facebook.png" alt="facebook" width="40" />
+                  <span class="sr-only">Facebook page</span>
+                 
+              </a>
+          
+              <a href="https://youtube.com/@aphi_siliguri?si=CifbAMYG6mfhqZMr" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                <img src="/Assets/youtube.png" alt="instagram" width="40" />
+                  <span class="sr-only">YouTube</span>
+              </a>
+              <a href="https://www.instagram.com/aphi_siliguri?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                <img src="/Assets/instagram.png" alt="twitter" width="40" />
+                  <span class="sr-only">instagram account</span>
+              </a>
+           
+          </div>
+      </div>
+    </div>
+</footer>
+
+
+
+
+
+
+<script>
+    document.getElementById('toggle-sidebar').addEventListener('click', function () {
+        document.getElementById('sidebar').classList.toggle('-translate-x-full');
+    });
+
+    document.getElementById('close-sidebar').addEventListener('click', function () {
+        document.getElementById('sidebar').classList.add('-translate-x-full');
+    });
+</script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+</body>
+</html>
